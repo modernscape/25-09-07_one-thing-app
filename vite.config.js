@@ -1,0 +1,13 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import tailwindcss from "@tailwindcss/vite";
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  base: "./",
+  build: {
+    outDir: "dist/_samples/25-09-07_one-thing-app",
+    emptyOutDir: true, // ← 既存の中身を削除してからビルド
+  },
+});

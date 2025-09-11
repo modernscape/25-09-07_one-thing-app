@@ -46,7 +46,7 @@ const AppLayout = ({ children }) => {
     <div className="flex min-h-screen">
       <div className="flex min-w-64 flex-col gap-2 p-6">
         <h1 className="text-2xl">
-          <p className="text-sm mb-1 text-gray-500">One Thing App</p>
+          <p className="text-sm mb-1 text-gray-500">One Thing App 2</p>
           <textarea
             type="text"
             value={mission}

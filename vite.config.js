@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "./",
+  // base: "./",
   build: {
     outDir: "dist/_samples/25-09-07_one-thing-app",
     emptyOutDir: true, // ← 既存の中身を削除してからビルド

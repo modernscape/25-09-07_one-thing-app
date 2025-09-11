@@ -7,8 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   // base: "./",
   build: {
-    // outDir: "dist/_samples/25-09-07_one-thing-app",
     outDir: "dist",
-    emptyOutDir: true, // ← 既存の中身を削除してからビルド
+    emptyOutDir: true,
   },
 });

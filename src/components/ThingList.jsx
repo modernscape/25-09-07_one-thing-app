@@ -35,8 +35,18 @@ const ThingList = () => {
     });
   };
 
-  const handleAddThingItem = (thing) => {
-    console.log(`${thing.title}にアイテムを追加`);
+  const handleAddThingItem = (thingID, count) => {
+    setThings((prev) =>
+      prev.map((t) => {
+        if (t.id === thingID) {
+          const newItem = `項目 ${count + 1}`;
+          const items = [...t.items, newItem];
+          return { ...t, items: items };
+        } else {
+          return t;
+        }
+      }),
+    );
   };
 
   const deleteThing = (thingId) =>
@@ -48,8 +58,6 @@ const ThingList = () => {
       title: "タイトル",
       items: ["アイテム"],
     };
-    console.log(newThing);
-
     setThings([...things, newThing]);
   };
 
@@ -58,6 +66,19 @@ const ThingList = () => {
       prev.flatMap((t) =>
         t.id === thingId
           ? [t, { ...t, id: crypto.randomUUID(), title: t.title + "のコピー" }]
+          : t,
+      ),
+    );
+  };
+
+  const deleteItem = (thingID, itemIndex) => {
+    setThings((prev) =>
+      prev.map((t) =>
+        t.id === thingID
+          ? {
+              ...t,
+              items: t.items.filter((_, i) => i !== itemIndex),
+            }
           : t,
       ),
     );
@@ -77,6 +98,7 @@ const ThingList = () => {
               prop_deleteThing={deleteThing}
               prop_duplicateThing={duplicateThing}
               thingCount={things.length}
+              prop_itemDelete={deleteItem}
             />
           );
         })}

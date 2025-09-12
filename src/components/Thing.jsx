@@ -9,6 +9,7 @@ const Thing = ({
   prop_addItem,
   prop_deleteThing,
   prop_duplicateThing,
+  prop_itemDelete,
   thingCount,
 }) => {
   const [menuPos, setMenuPos] = useState(null);
@@ -23,13 +24,11 @@ const Thing = ({
   };
 
   const handleDeleteThing = () => {
-    console.log(`${thing.title}を削除`);
     prop_deleteThing(thing.id);
     setMenuPos(null);
   };
 
   const handleEditThing = () => {
-    console.log(`${thing.title}を編集`);
     setMenuPos(null);
   };
 
@@ -59,9 +58,13 @@ const Thing = ({
           {thing.items.map((item, index) => (
             <li key={item} className="text-sm">
               <ThingItem
+                index={index}
                 item={item}
                 prop_onChange={(newItem) => {
                   prop_itemChange(newItem, index, thing);
+                }}
+                prop_contextMenu={(index) => {
+                  prop_itemDelete(thing.id, index);
                 }}
               />
             </li>
@@ -69,7 +72,7 @@ const Thing = ({
           <button
             className="text-gray-400 bold"
             onClick={() => {
-              prop_addItem(thing);
+              prop_addItem(thing.id, thing.items.length);
             }}
           >
             ＋

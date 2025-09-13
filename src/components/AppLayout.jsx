@@ -44,7 +44,7 @@ const AppLayout = ({ children }) => {
 
   return (
     <div className="flex min-h-screen">
-      <div className="flex min-w-64 flex-col gap-2 p-6">
+      <div className="flex min-w-64 flex-col gap-2 p-6 hidden sm:block">
         <h1 className="text-2xl">
           <p className="text-sm mb-1 text-gray-500">One Thing App</p>
           <textarea
@@ -69,7 +69,7 @@ const AppLayout = ({ children }) => {
           </ul>
         </nav>
       </div>
-      <main className="w-full">{children}</main>
+      <main className="w-full overflow-x-scroll">{children}</main>
     </div>
   );
 };

@@ -24,7 +24,7 @@ const sideMenu = [
 const linkVariants = cva("flex items-center gap-2 rounded px-5 py-3", {
   variants: {
     active: {
-      true: "bg-blue-400 text-white",
+      true: "bg-blue-300 text-white",
       false: "hover:bg-slate-100",
     },
   },

@@ -54,7 +54,7 @@ const Thing = ({
             onChange={(e) => prop_titleChange(thing.id, e.target.value)}
           />
         </h2>
-        <ul className="flex gap-2 overflow-scroll bg-red-100 p-1">
+        <ul className="flex gap-2 overflow-scroll p-1">
           {thing.items.map((item, index) => (
             <li key={item} className="text-sm">
               <ThingItem

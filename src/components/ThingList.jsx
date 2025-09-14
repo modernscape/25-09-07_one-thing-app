@@ -35,11 +35,11 @@ const ThingList = () => {
     });
   };
 
-  const handleAddThingItem = (thingID, count) => {
+  const handleAddThingItem = (thingID) => {
     setThings((prev) =>
       prev.map((t) => {
         if (t.id === thingID) {
-          const newItem = `項目 ${count + 1}`;
+          const newItem = "";
           const items = [...t.items, newItem];
           return { ...t, items: items };
         } else {

@@ -48,7 +48,7 @@ const Thing = ({
       <div className="bg-blue-100 p-2" onContextMenu={handleContextMenu}>
         <h2 className="text-2xl text-gray-400 pb-2">
           <input
-            className="underline"
+            className="underline w-full"
             type="text"
             value={thing.title}
             onChange={(e) => prop_titleChange(thing.id, e.target.value)}

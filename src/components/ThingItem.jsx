@@ -3,7 +3,7 @@ const ThingItem = ({ item, index, prop_onChange, prop_contextMenu }) => {
     <input
       type="text"
       value={item}
-      style={{ width: "10ch" }}
+      style={{ width: "7ch" }}
       onContextMenu={(e) => {
         e.preventDefault();
         e.stopPropagation();
